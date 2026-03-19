@@ -1,0 +1,30 @@
+{
+  "name": "karellen-plugins",
+  "version": "1.0.0",
+  "description": "Claude Code plugins by Karellen, Inc.",
+  "owner": {
+    "name": "Karellen, Inc.",
+    "email": "supervisor@karellen.co"
+  },
+  "plugins": [
+    {
+      "name": "karellen-rr-mcp",
+      "description": "rr reverse debugging for Claude Code via MCP - record, replay, and debug program executions with full forward and reverse control",
+      "version": "0.2.3",
+      "author": {
+        "name": "Karellen, Inc.",
+        "email": "supervisor@karellen.co"
+      },
+      "homepage": "https://karellen.co",
+      "repository": "https://github.com/karellen/karellen-rr-mcp",
+      "license": "Apache-2.0",
+      "keywords": ["rr", "reverse-debugging", "gdb", "mcp", "debugging"],
+      "category": "development",
+      "source": {
+        "source": "github",
+        "repo": "karellen/karellen-rr-mcp",
+        "ref": "master"
+      }
+    }
+  ]
+}
