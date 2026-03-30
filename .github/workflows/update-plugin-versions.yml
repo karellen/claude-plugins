@@ -1,0 +1,83 @@
+name: Update Plugin Versions
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [update-plugin-versions]
+
+permissions:
+  contents: write
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Collect latest plugin versions
+        id: collect
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          MARKETPLACE=".claude-plugin/marketplace.json"
+          UPDATED="false"
+          CHANGES=""
+
+          # Iterate over each plugin in marketplace.json
+          PLUGIN_COUNT=$(jq '.plugins | length' "$MARKETPLACE")
+
+          for i in $(seq 0 $((PLUGIN_COUNT - 1))); do
+            NAME=$(jq -r ".plugins[$i].name" "$MARKETPLACE")
+            REPO=$(jq -r ".plugins[$i].source.repo" "$MARKETPLACE")
+            CURRENT=$(jq -r ".plugins[$i].version" "$MARKETPLACE")
+
+            echo "Checking $NAME (repo: $REPO, current: $CURRENT)..."
+
+            # Get latest release tag from GitHub
+            LATEST_TAG=$(gh api "repos/$REPO/releases/latest" --jq '.tag_name' 2>/dev/null || echo "")
+
+            if [ -z "$LATEST_TAG" ]; then
+              echo "  No release found for $REPO, skipping"
+              continue
+            fi
+
+            # Strip leading 'v' if present
+            LATEST="${LATEST_TAG#v}"
+
+            echo "  Latest: $LATEST"
+
+            if [ "$CURRENT" != "$LATEST" ]; then
+              echo "  Updating $NAME: $CURRENT -> $LATEST"
+
+              # Update version in marketplace.json
+              jq --arg idx "$i" --arg ver "$LATEST" \
+                '.plugins[$idx | tonumber].version = $ver' \
+                "$MARKETPLACE" > "${MARKETPLACE}.tmp"
+              mv "${MARKETPLACE}.tmp" "$MARKETPLACE"
+
+              UPDATED="true"
+              CHANGES="${CHANGES}- **${NAME}**: ${CURRENT} -> ${LATEST}\n"
+            else
+              echo "  Already up to date"
+            fi
+          done
+
+          echo "updated=$UPDATED" >> "$GITHUB_OUTPUT"
+
+          if [ "$UPDATED" = "true" ]; then
+            echo -e "Updated plugins:\n$CHANGES"
+          else
+            echo "All plugins are up to date"
+          fi
+
+      - name: Commit and push
+        if: steps.collect.outputs.updated == 'true'
+        run: |
+          git config user.name "Karellen Supervisor"
+          git config user.email "supervisor@karellen.co"
+          git add .claude-plugin/marketplace.json
+          git commit -m "Update plugin versions"
+          git push
