@@ -8,6 +8,7 @@ Claude Code plugin marketplace by [Karellen, Inc.](https://karellen.co)
 |--------|-------------|
 | [karellen-rr-mcp](https://github.com/karellen/karellen-rr-mcp) | rr reverse debugging via MCP |
 | [karellen-jdb-mcp](https://github.com/karellen/karellen-jdb-mcp) | JDB (Java Debugger) via MCP |
+| [karellen-lsp-mcp](https://github.com/karellen/karellen-lsp-mcp) | LSP code intelligence via MCP and native LSP |
 
 ## Usage
 
