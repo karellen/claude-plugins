@@ -18,7 +18,13 @@
       "homepage": "https://karellen.co",
       "repository": "https://github.com/karellen/karellen-rr-mcp",
       "license": "Apache-2.0",
-      "keywords": ["rr", "reverse-debugging", "gdb", "mcp", "debugging"],
+      "keywords": [
+        "rr",
+        "reverse-debugging",
+        "gdb",
+        "mcp",
+        "debugging"
+      ],
       "category": "development",
       "source": {
         "source": "github",
@@ -29,7 +35,7 @@
     {
       "name": "karellen-jdb-mcp",
       "description": "JDB (Java Debugger) for Claude Code via MCP - attach to running JVMs and debug with breakpoints, expression evaluation, thread inspection, and class introspection",
-      "version": "0.0.1",
+      "version": "0.0.4",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
@@ -37,7 +43,13 @@
       "homepage": "https://karellen.co",
       "repository": "https://github.com/karellen/karellen-jdb-mcp",
       "license": "Apache-2.0",
-      "keywords": ["jdb", "java-debugger", "jvm", "mcp", "debugging"],
+      "keywords": [
+        "jdb",
+        "java-debugger",
+        "jvm",
+        "mcp",
+        "debugging"
+      ],
       "category": "development",
       "source": {
         "source": "github",
@@ -48,7 +60,7 @@
     {
       "name": "karellen-lsp-mcp",
       "description": "LSP-backed code intelligence for Claude Code via MCP and native LSP - navigate definitions, references, call hierarchies, type hierarchies, and diagnostics across codebases",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
@@ -56,7 +68,14 @@
       "homepage": "https://karellen.co",
       "repository": "https://github.com/karellen/karellen-lsp-mcp",
       "license": "Apache-2.0",
-      "keywords": ["lsp", "language-server-protocol", "mcp", "code-intelligence", "clangd", "jdtls"],
+      "keywords": [
+        "lsp",
+        "language-server-protocol",
+        "mcp",
+        "code-intelligence",
+        "clangd",
+        "jdtls"
+      ],
       "category": "development",
       "source": {
         "source": "github",
