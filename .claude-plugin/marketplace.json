@@ -60,7 +60,7 @@
     {
       "name": "karellen-lsp-mcp",
       "description": "LSP-backed code intelligence for Claude Code via MCP and native LSP - navigate definitions, references, call hierarchies, type hierarchies, and diagnostics across codebases",
-      "version": "0.1.8",
+      "version": "0.1.9",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
