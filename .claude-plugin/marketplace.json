@@ -10,7 +10,7 @@
     {
       "name": "karellen-rr-mcp",
       "description": "rr reverse debugging for Claude Code via MCP - record, replay, and debug program executions with full forward and reverse control",
-      "version": "0.2.3",
+      "version": "0.2.4",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
