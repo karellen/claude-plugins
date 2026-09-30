@@ -35,7 +35,7 @@
     {
       "name": "karellen-jdb-mcp",
       "description": "JDB (Java Debugger) for Claude Code via MCP - attach to running JVMs and debug with breakpoints, expression evaluation, thread inspection, and class introspection",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
@@ -86,7 +86,7 @@
     {
       "name": "karellen-qbo-mcp",
       "description": "QuickBooks Online bookkeeping for Claude Code via MCP - reports, queries and full record management under your supervision, running locally",
-      "version": "0.0.1",
+      "version": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/releases/releases#get-the-latest-release\",\"status\":\"404\"}",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
