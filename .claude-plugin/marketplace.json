@@ -82,6 +82,32 @@
         "repo": "karellen/karellen-lsp-mcp",
         "ref": "master"
       }
+    },
+    {
+      "name": "karellen-qbo-mcp",
+      "description": "QuickBooks Online bookkeeping for Claude Code via MCP - reports, queries and full record management under your supervision, running locally",
+      "version": "0.0.1",
+      "author": {
+        "name": "Karellen, Inc.",
+        "email": "supervisor@karellen.co"
+      },
+      "homepage": "https://karellen.co",
+      "repository": "https://github.com/karellen/karellen-qbo-mcp",
+      "license": "Apache-2.0",
+      "keywords": [
+        "quickbooks",
+        "qbo",
+        "intuit",
+        "accounting",
+        "bookkeeping",
+        "mcp"
+      ],
+      "category": "productivity",
+      "source": {
+        "source": "github",
+        "repo": "karellen/karellen-qbo-mcp",
+        "ref": "master"
+      }
     }
   ]
 }
