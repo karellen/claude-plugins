@@ -86,7 +86,7 @@
     {
       "name": "karellen-qbo-mcp",
       "description": "QuickBooks Online bookkeeping for Claude Code via MCP - reports, queries and full record management under your supervision, running locally",
-      "version": "0.0.6",
+      "version": "0.0.7",
       "author": {
         "name": "Karellen, Inc.",
         "email": "supervisor@karellen.co"
