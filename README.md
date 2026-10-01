@@ -25,6 +25,23 @@ Then install a plugin:
 claude plugin install karellen-rr-mcp@karellen-plugins
 ```
 
+Claude Code auto-updates only Anthropic's own marketplaces by default. To receive new
+plugin releases automatically, turn on **Enable auto-update** for `karellen-plugins` under
+`/plugin` → **Marketplaces**, or set `autoUpdate` on the marketplace in your settings:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "karellen-plugins": {
+      "source": { "source": "github", "repo": "karellen/claude-plugins" },
+      "autoUpdate": true
+    }
+  }
+}
+```
+
+Otherwise update a plugin by hand with `claude plugin update <plugin>@karellen-plugins`.
+
 ## Prerequisites
 
 Each plugin has its own prerequisites. See the individual plugin README for details.
