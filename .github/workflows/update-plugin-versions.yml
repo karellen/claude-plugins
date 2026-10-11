@@ -8,12 +8,22 @@ on:
 permissions:
   contents: write
 
+# Plugin releases landing close together dispatch overlapping runs that race to push the same
+# marketplace.json lines. Serialize them; superseding a pending run is harmless because every
+# run re-reads the latest release of every plugin.
+concurrency:
+  group: update-plugin-versions
+  cancel-in-progress: false
+
 jobs:
   update-versions:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history so the rebase before push can find the merge base.
+          fetch-depth: 0
 
       - name: Collect latest plugin versions
         id: collect
@@ -81,4 +91,5 @@ jobs:
           git config user.email "supervisor@karellen.co"
           git add .claude-plugin/marketplace.json
           git commit -m "Update plugin versions"
+          git pull --rebase
           git push
